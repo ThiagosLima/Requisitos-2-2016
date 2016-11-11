@@ -5,16 +5,14 @@ import java.util.Date;
 public abstract class Person {
 	
 	private String name;
-	private String sex;
 	private Date dataOfBirth;
 	
 	public Person() {
 		
 	}
 
-	public Person (String name,String sex,Date dateOfBirth) {
+	public Person (String name,Date dateOfBirth) {
 		setName(name);
-		setSex(sex);
 		setDataOfBirth(dateOfBirth);
 	}
 	
@@ -24,14 +22,6 @@ public abstract class Person {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
 	}
 
 	public Date getDataOfBirth() {
