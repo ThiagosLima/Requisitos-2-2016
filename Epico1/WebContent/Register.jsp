@@ -14,7 +14,7 @@
 		<p> Sala : <input type = "text" name = "room" size = "10" /><p>
 		<p> Matricula : <input type = "text" name = "registration" size = "12" /><p>
 		<p> Turno : <input type = "text" name = "turn" size = "10" /><p>
-		<p> Ano : <input type = "text" name = "year" size = "2" /><p>
+		<p> Ano : <input type = "text" name = "year" size = "3" /><p>
 		<p> Modalidade : <input type = "radio" name = "modalityCourse" value = "EJA" />Ensino de Jovens e Adultos 
 		<input type = "radio" name = "modalityCourse" value = "Normal"/> Ensino Regular</p>
 		<p> Bolsista : <input type = "radio" name = "scholarship" value = "Sim" /> Sim 
