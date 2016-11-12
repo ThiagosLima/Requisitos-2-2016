@@ -61,7 +61,6 @@ public class RegisterServlet extends HttpServlet {
 		boolean scholarShipValid = false;
 		
 		nameValid = Validations.validateName(name);
-		dateOfBirthValid = Validations.validateDate(sdateOfBirth);
 		
 		if (nameValid == true && dateOfBirthValid == true) {
 			Services.createStudent(name,sdateOfBirth);

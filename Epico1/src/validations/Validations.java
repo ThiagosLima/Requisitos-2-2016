@@ -7,18 +7,6 @@ import java.util.Date;
 
 public class Validations {
 	
-	public static boolean validateDate (String date) {
-		
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		try {
-			Date dateOfBirth = dateFormat.parse(date);
-			return true;
-		} catch (ParseException error) {
-			error.printStackTrace(); // MOSTRAR MENSAGENS DE ERRO
-			return false;
-		}
-	}
-	
 	public static boolean validateName (String name) {
 		
 		if (name.isEmpty()) {
