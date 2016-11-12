@@ -2,12 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Tela de Cadastro</title>
+<title>Tela de Cadastro de Aluno</title>
 </head>
 <body>
 
-	<h1>Tela de Cadastro Aluno</h1>
-	<form name = "register" method = "post"">
+	<h3>Tela de Cadastro Aluno</h3>
+	<%String open = (String) request.getAttribute("open");%>
+	
+	<form name = "register" >
 		<p> Nome : <input type = "text" name = "name" size = "42" /><p>
 		<p> Data de Nascimento : <input type = "text" name = "dateOfBirth" size = "10" />dd/mm/aaaa<p>
 		<p> Turma : <input type = "text" name = "letterClass" size = "1" /><p>
