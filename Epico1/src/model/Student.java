@@ -6,21 +6,24 @@ public class Student extends Person{
 	String room; // sala
 	String registration; // Matricula
 	String turn;
-	String serie;
+	String year;
 	String modalityCourse; //Modalidade de curso
-	
+	String scholarship; //Bolsista
+
 	public Student () {
 		
 	}
 
-	public Student (String letterClass,String room,String registration,String turn,String serie,
-					String modalityCourse) {
+	public Student (String letterClass,String room,String registration,String turn,String year,
+					String modalityCourse,String scholarship) {
+		super();
 		setLetterClass(letterClass);
 		setRoom(room);
 		setRegistration(registration);
 		setTurn(turn);
-		setSerie(serie);
+		setYear(year);
 		setModalityCourse(modalityCourse);
+		setScholarship(scholarship);
 	}
 
 	public String getLetterClass() {
@@ -55,12 +58,12 @@ public class Student extends Person{
 		this.registration = registration;
 	}
 
-	public String getSerie() {
-		return serie;
+	public String getYear() {
+		return year;
 	}
 
-	public void setSerie(String serie) {
-		this.serie = serie;
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 	public String getModalityCourse() {
@@ -69,5 +72,13 @@ public class Student extends Person{
 
 	public void setModalityCourse(String modalityCourse) {
 		this.modalityCourse = modalityCourse;
+	}
+	
+	public String getScholarship() {
+		return scholarship;
+	}
+
+	public void setScholarship(String scholarship) {
+		this.scholarship = scholarship;
 	}
 }

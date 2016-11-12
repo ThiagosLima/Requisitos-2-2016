@@ -5,13 +5,13 @@ import java.util.Date;
 public abstract class Person {
 	
 	private String name;
-	private Date dataOfBirth;
+	private String dataOfBirth;
 	
 	public Person() {
 		
 	}
 
-	public Person (String name,Date dateOfBirth) {
+	Person (String name,String dateOfBirth) {
 		setName(name);
 		setDataOfBirth(dateOfBirth);
 	}
@@ -24,11 +24,11 @@ public abstract class Person {
 		this.name = name;
 	}
 
-	public Date getDataOfBirth() {
+	public String getDataOfBirth() {
 		return dataOfBirth;
 	}
 
-	public void setDataOfBirth(Date dataOfBirth) {
+	public void setDataOfBirth(String dataOfBirth) {
 		this.dataOfBirth = dataOfBirth;
 	}
 }
