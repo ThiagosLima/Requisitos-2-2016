@@ -11,14 +11,20 @@
 <h3> Seja bem vindo </h3>
 
 
-<form action="post"  >
+<form  action="ValidateLogin" >
 <p> Login: <input type="text" name="login" size="30"  /> </p>
 <p> Senha: <input type="text" name="password" size="30" /> </p>
-<p> <input type="radio" name="user" value="D"/> Diretor</p> 
+<p> <input type="radio" name="user" value="D"/> Diretor </p> 
 <p> <input type="radio" name="user" value="F"/> Funcionário</p> 
 <p> <input type="radio" name="user" value="R"/> Responsável</p> 
-<p> <input type="submit" value="Login" name="LoginButton"
-onclick="document.forms[0].action = 'Register.jsp' ; return true;"  />  </p>
+<%String erro = (String) request.getAttribute("erro");
+if(erro != null && erro.length() != 0 ){
+%>
+<p style='color: red'> <%= erro %></p>
+<%
+}
+%>
+<p> <input type="submit" value="Login" name="LoginButton" />  </p>
 
 </form>
 

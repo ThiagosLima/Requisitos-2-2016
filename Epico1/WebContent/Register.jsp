@@ -7,7 +7,7 @@
 <body>
 
 	<h1>Tela de Cadastro Aluno</h1>
-	<form name = "register" method = "post">
+	<form name = "register" method = "post"">
 		<p> Nome : <input type = "text" name = "name" size = "42" /><p>
 		<p> Data de Nascimento : <input type = "text" name = "dateOfBirth" size = "10" />dd/mm/aaaa<p>
 		<p> Turma : <input type = "text" name = "letterClass" size = "1" /><p>
