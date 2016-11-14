@@ -1,36 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Menu Principal</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+body {<!--
+	background-image:
+		url("https://espalhafactos.com/wp-content/uploads/2016/06/dragonballsuper.jpg");
+	-->
+	background-color: #FFFFFF;
+}
+
+.topo {
+	margin-top: 30px !important;
+}
+
+.css img {
+	float: right;
+	width: 70%;
+	border: thin solid;
+	padding: 5px;
+	margin: 0px 10px 10px 0;
+}
+</style>
 </head>
 <body>
+<%String criou = (String) request.getAttribute("criou");
+if (criou != null && !criou.trim().isEmpty()) {
+%>
+	
 <%
-String user = (String) request.getAttribute("user");
+}
+%>
 
-if (user != null){	
-	if ("D".equals(user) ){ %>
-		<h5>TIPO DE USU√ÅRIO: DIRETOR  </h5> 
-		<tr>
-			<td><form action="OpenRegistrationStudent">
-			<input type="submit" name='aluno' value="ALUNO" >
-			</form>
-			 </td>
-			<td><input type="submit" name='responsavel' value="RESPONS√ÅVEL" ></td>
-			<td><input type="submit" name='funcionario' value="FUNCION√ÅRIO" ></td>
-		</tr> 
-	<%}
-	if ("R".equals(user) ){%>
-		<h5>TIPO DE USU√ÅRIO: RESPONS√ÅVEL  </h5><% 
-	}
-	if ("F".equals(user) ){%>
-		<h5>TIPO DE USU√ÅRIO: FUNCION√ÅRIO  </h5>
-	<% }}%>
-	<p><a href='index.jsp'> Logout</a></p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-default topo">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">CEF3</a>
+						</div>
 
+						<div class="collapse navbar-collapse"
+							id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
 
+								<!-- <li class="active"><a href="index.php">Home</a></li> -->
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Responsavel <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="insertResponsible">Adicionar Respons·vel</a></li>
+										<li><a href="updateResponsible">Editar Respons·vel</a></li>
+										<li><a href="deleteResponsible">Excluir Respons·vel</a></li>
+									</ul></li>
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Aluno <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="RegisterStudent.jsp">Adicionar Aluno</a></li>
+										<li><a href="updateStudent">Editar Aluno</a></li>
+										<li><a href="deleteStudent">Excluir Aluno</a></li>
+									</ul></li>
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">RelatÛrio <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="report">Gerar RelatÛrio</a></li>
+									</ul></li>
+								<li></li>
+							</ul>
+							<form class="navbar-form navbar-right" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control"
+										placeholder="Procurar por um aluno/respons·vel pelo nome"
+										style="width: 326px">
+								</div>
+								<button type="submit" class="btn btn-default">Procurar</button>
+							</form>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		
+		
+	</div>
 </body>
 </html>

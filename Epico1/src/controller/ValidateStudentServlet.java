@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,24 +43,29 @@ public class ValidateStudentServlet extends HttpServlet {
 	}
 
 	private void doService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String criou = null;
+		String name = request.getParameter("name_student");
+		String dataOfBirth = request.getParameter("dateOfBirth_student");
+		String letterClass = request.getParameter("letterClass_student");
+		String room = request.getParameter("room_student");
+		String registration = request.getParameter("registration_student");
+		String turn = request.getParameter("turn_student");
+		String year = request.getParameter("year_student");
+		String scholarship = request.getParameter("scholarship_student");
+		String modalityCourse = request.getParameter("modalityCourse_student");
 		
-		String name = request.getParameter("name");
-		String sdateOfBirth = request.getParameter("dateOfBirth");
-		String letterClass = request.getParameter("letterClass");
-		String room = request.getParameter("room");
-		String registration = request.getParameter("registration");
-		String turn = request.getParameter("turn");
-		String year = request.getParameter("year");
-		String scholarship = request.getParameter("scholarship");
-		boolean nameValid = false;
-		boolean dateOfBirthValid = false;
-		boolean letterClassValid = false;
-		boolean roomValid = false;
-		boolean registrationValid = false;
-		boolean turnValid = false;
-		boolean yearValid = false;
-		boolean scholarShipValid = false;
+		boolean validName = Validations.validateName(request, response, name);
+		boolean validRegistration = Validations.validateRegistration(request, response, registration);
 		
+		
+		if (validName && validRegistration){
+		
+			criou = "mensagem" ; 
+			request.setAttribute("criou", criou);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("MenuPrincipal.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 		
 	}
 	

@@ -17,12 +17,30 @@ public class Validations {
 	public static boolean validateName (HttpServletRequest request, HttpServletResponse response,String name) throws ServletException, IOException {
 		
 		if (name.isEmpty()) {
-			Services.showError(request, response, "Nome Vazio! Por favor preencha o campo do nome.");
+			Services.showErrorName(request, response, "Nome Vazio! Por favor preencha o campo do nome.");
 			return false;
 		} else if (name.length() < 3) {
-			Services.showError(request, response, "Insira um nome com no minimo 3 letras.");
+			Services.showErrorName(request, response, "Insira um nome com no minimo 3 letras.");
 			return false;
 		} else 
 			return true;
+	}
+	
+	public static boolean validateRegistration (HttpServletRequest request, HttpServletResponse response,String registration) throws ServletException, IOException {
+	
+		int numberValid;
+		
+		if (registration.trim().isEmpty()) {
+			Services.showErrorRegistration(request, response, "Insira a matrícula");
+			return false;
+		}
+		
+		try {
+			numberValid = Integer.parseInt(registration);
+			return true;
+		}catch (Exception error) {
+			Services.showErrorRegistration(request, response, "Apenas números na matrícula");
+			return false;
+		}
 	}
 }

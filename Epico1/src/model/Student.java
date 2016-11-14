@@ -1,37 +1,52 @@
 package model;
 
+import java.util.Date;
+
 public class Student extends Person{
 	
-	private String letterClass;
-	private String room; // sala
-	private String registration; // Matricula
+	private Character letterClass;
+	private Integer room; // sala
+	private Integer registration; // Matricula
 	private String turn;
-	private String year;
+	private Integer year;
 	private String modalityCourse; //Modalidade de curso
-	private String scholarship; //Bolsista
-
-	public Student () {
-		
+	private Boolean scholarship; //Bolsista
+	
+	
+	public Student(String name, String dataOfBirth,Character letterClass, Integer room, Integer registration, String turn, Integer year,
+			String modalityCourse ,Boolean scholarship) {
+		super(name, dataOfBirth);
+		this.letterClass = letterClass;
+		this.room = room;
+		this.registration = registration;
+		this.turn = turn;
+		this.year = year;
+		this.modalityCourse = modalityCourse;
+		this.scholarship = scholarship;
 	}
 
-	public Student (String letterClass,String room,String registration,String turn,String year,
-					String modalityCourse,String scholarship) {
-		super();
-		setLetterClass(letterClass);
-		setRoom(room);
-		setRegistration(registration);
-		setTurn(turn);
-		setYear(year);
-		setModalityCourse(modalityCourse);
-		setScholarship(scholarship);
-	}
-
-	public String getLetterClass() {
+	public Character getLetterClass() {
 		return letterClass;
 	}
 
-	public void setLetterClass(String letterClass) {
+	public void setLetterClass(Character letterClass) {
 		this.letterClass = letterClass;
+	}
+
+	public Integer getRoom() {
+		return room;
+	}
+
+	public void setRoom(Integer room) {
+		this.room = room;
+	}
+
+	public Integer getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(Integer registration) {
+		this.registration = registration;
 	}
 
 	public String getTurn() {
@@ -42,27 +57,11 @@ public class Student extends Person{
 		this.turn = turn;
 	}
 
-	public String getRoom() {
-		return room;
-	}
-
-	public void setRoom(String room) {
-		this.room = room;
-	}
-
-	public String getRegistration() {
-		return registration;
-	}
-
-	public void setRegistration(String registration) {
-		this.registration = registration;
-	}
-
-	public String getYear() {
+	public Integer getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}
 
@@ -73,12 +72,16 @@ public class Student extends Person{
 	public void setModalityCourse(String modalityCourse) {
 		this.modalityCourse = modalityCourse;
 	}
-	
-	public String getScholarship() {
+
+	public Boolean getScholarship() {
 		return scholarship;
 	}
 
-	public void setScholarship(String scholarship) {
+	public void setScholarship(Boolean scholarship) {
 		this.scholarship = scholarship;
 	}
+	
+	
+
+	
 }
