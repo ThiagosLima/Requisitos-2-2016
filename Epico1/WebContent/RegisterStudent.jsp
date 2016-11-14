@@ -1,29 +1,186 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Tela de Cadastro de Aluno</title>
+<title>Cadastro de Aluno</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+body {<!--
+	background-image:
+		url("https://espalhafactos.com/wp-content/uploads/2016/06/dragonballsuper.jpg");
+	-->
+	background-color: #FFFFFF;
+}
+
+.topo {
+	margin-top: 30px !important;
+}
+
+.css img {
+	float: right;
+	width: 70%;
+	border: thin solid;
+	padding: 5px;
+	margin: 0px 10px 10px 0;
+}
+</style>
 </head>
 <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-default topo">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1"
+								aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">CEF3</a>
+						</div>
 
-	<h3>Tela de Cadastro Aluno</h3>
-	<%String open = (String) request.getAttribute("open");%>
-	
-	<form name = "register" >
-		<p> Nome : <input type = "text" name = "name" size = "42" /><p>
-		<p> Data de Nascimento : <input type = "text" name = "dateOfBirth" size = "10" />dd/mm/aaaa<p>
-		<p> Turma : <input type = "text" name = "letterClass" size = "1" /><p>
-		<p> Sala : <input type = "text" name = "room" size = "10" /><p>
-		<p> Matricula : <input type = "text" name = "registration" size = "12" /><p>
-		<p> Turno : <input type = "text" name = "turn" size = "10" /><p>
-		<p> Ano : <input type = "text" name = "year" size = "3" /><p>
-		<p> Modalidade : <input type = "radio" name = "modalityCourse" value = "EJA" />Ensino de Jovens e Adultos 
-		<input type = "radio" name = "modalityCourse" value = "Normal"/> Ensino Regular</p>
-		<p> Bolsista : <input type = "radio" name = "scholarship" value = "Sim" /> Sim 
-		<input type = "radio" name = "scholarship" value = "Não"/> Não</p>
-		<p> <input type = "submit" value = "Cadastrar" />
-		
-	</form>
-	
+						<div class="collapse navbar-collapse"
+							id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+
+								<!-- <li class="active"><a href="index.php">Home</a></li> -->
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Responsavel <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="insertResponsible">Adicionar Responsável</a></li>
+										<li><a href="updateResponsible">Editar Responsável</a></li>
+										<li><a href="deleteResponsible">Excluir Responsável</a></li>
+									</ul></li>
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Aluno <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="insertStudent">Adicionar Aluno</a></li>
+										<li><a href="updateStudent">Editar Aluno</a></li>
+										<li><a href="deleteStudent">Excluir Aluno</a></li>
+									</ul></li>
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false">Relatório <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="report">Gerar Relatório</a></li>
+									</ul></li>
+								<li></li>
+							</ul>
+							<form class="navbar-form navbar-right" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control"
+										placeholder="Procurar por um aluno/responsável pelo nome"
+										style="width: 326px">
+								</div>
+								<button type="submit" class="btn btn-default">Procurar</button>
+							</form>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- A PARTE DE CIMA ACABA AQUI! -->
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Cadastrar Aluno</h1>
+				<form action="?page=salvar&acao=aluno" method="POST">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Nome:</label> <input type="text" name="name_student"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Matrícula:</label> <input type="text"
+									name="registration_student" class="form-control"
+									style="width: 100px" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Sala:</label> <input type="number" name="room_student"
+									class="form-control" style="width: 70px" />
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Turma:</label> <input type="text"
+									name="letter_class_student" class="form-control"
+									style="width: 50px" />
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Bolsista:</label> <br> <input type="radio"
+									name="scholarship_student" value="yes"> Sim <input
+									type="radio" name="scholarship_student" value="no"> Não
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Data de Nascimento:</label> <input type="date"
+									name="dateOfBirth_student" class="form-control"
+									style="width: 160px" />
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Ano:</label> <input type="number" name="year_student"
+									class="form-control" style="width: 60px" />
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Turno:</label> <br> <input type="radio"
+									name="turn_student" value="morning_student"> Matutino <input
+									type="radio" name="turn_student" value="afternoon_student">
+								Vespertino
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="form">
+								<input type="file" name="image">
+								<button class="btn btn-sm upload" type="submit">Upload</button>
+								<button type="button" class="btn btn-sm cancel"></button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Etapa/Modalidade do Curso:</label> <br> <input
+									type="radio" name="modalityCourse_student" value="eja_student">
+								EJA - Educação de Jovens e Adultos <input type="radio"
+									name="modalityCourse_student" value="normal_student">
+								Normal
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-success">Enviar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

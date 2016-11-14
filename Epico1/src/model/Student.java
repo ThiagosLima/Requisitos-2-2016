@@ -2,13 +2,13 @@ package model;
 
 public class Student extends Person{
 	
-	String letterClass;
-	String room; // sala
-	String registration; // Matricula
-	String turn;
-	String year;
-	String modalityCourse; //Modalidade de curso
-	String scholarship; //Bolsista
+	private String letterClass;
+	private String room; // sala
+	private String registration; // Matricula
+	private String turn;
+	private String year;
+	private String modalityCourse; //Modalidade de curso
+	private String scholarship; //Bolsista
 
 	public Student () {
 		

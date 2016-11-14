@@ -60,11 +60,7 @@ public class ValidateStudentServlet extends HttpServlet {
 		boolean yearValid = false;
 		boolean scholarShipValid = false;
 		
-		nameValid = Validations.validateName(name);
 		
-		if (nameValid == true && dateOfBirthValid == true) {
-			Services.createStudent(name,sdateOfBirth);
-		}
 	}
 	
 }
