@@ -93,8 +93,8 @@ body {<!--
 		<!-- A PARTE DE CIMA ACABA AQUI! -->
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Cadastrar Aluno</h1>
-				<form action="RegisterServlet?acao=Cadastrar" method="post">
+				<h1>Editar Aluno</h1>
+				<form action="UpdateStudentServlet?acao=Alterar" method="post">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -175,7 +175,7 @@ body {<!--
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success"><li><a href="menuPrincipal.jsp">Cadastrar</a></li></button>
+							<button type="submit" class="btn btn-success"><li><a href="menuPrincipal.jsp">Alterar Aluno</a></li></button>
 						</div>
 					</div>
 				</form>
