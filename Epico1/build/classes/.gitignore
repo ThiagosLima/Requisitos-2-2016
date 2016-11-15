@@ -1,6 +1,5 @@
-/images/
-/dragonballsuper.jpg
-/model/
 /controller/
+/model/
 /services/
 /validations/
+/dao/

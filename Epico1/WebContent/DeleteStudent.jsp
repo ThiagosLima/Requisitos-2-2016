@@ -175,7 +175,7 @@ body {<!--
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success"><li><a href="menuPrincipal.jsp">Alterar Aluno</a></li></button>
+							<button type="submit" class="btn btn-success"><li><a href="MenuPrincipal.jsp">Alterar Aluno</a></li></button>
 						</div>
 					</div>
 				</form>
