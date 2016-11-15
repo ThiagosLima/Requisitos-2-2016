@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.plaf.synth.SynthSeparatorUI;
+import javax.websocket.MessageHandler.Whole;
 
 import model.Student;
 import services.Services;
@@ -36,7 +37,7 @@ public class RegisterStudentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		doPost(request, response);
 	}
 
 	/**
@@ -48,7 +49,7 @@ public class RegisterStudentServlet extends HttpServlet {
 		String acao = request.getParameter("acao");
 		int id = 0;
 		String name = request.getParameter("name_student");
-		System.out.println(name);
+		System.out.println("name" + name);
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
 		String letterClass = request.getParameter("letterClass_student");
 		String room = request.getParameter("room_student");
@@ -71,7 +72,7 @@ public class RegisterStudentServlet extends HttpServlet {
 					break;
 			}
 		} catch (Exception error) {
-			
+			showError(request, response, "Não foi possível cadastrar o aluno");
 		}
 	}
 
