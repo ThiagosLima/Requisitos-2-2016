@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Student extends Person {
 	
-	private int idStudent;
 	private String letterClass;
 	private String room; // sala
 	private String registration; // Matricula
@@ -13,10 +12,9 @@ public class Student extends Person {
 	private String modalityCourse; //Modalidade de curso
 	private String scholarship; //Bolsista
 	
-	public Student(int id,String nameStudent, String dataOfBirth,String letterClass,String room,String registration,
+	public Student(String nameStudent, String dataOfBirth,String letterClass,String room,String registration,
 			String turn, String year,String modalityCourse,String scholarShip) {
 		super(name, dataOfBirth);
-		setIdStudent(id);
 		setLetterClass(letterClass);
 		setDataOfBirth(dataOfBirth);
 		setRoom(room);
@@ -68,11 +66,5 @@ public class Student extends Person {
 	}
 	public void setScholarship(String scholarship) {
 		this.scholarship = scholarship;
-	}
-	public int getIdStudent() {
-		return idStudent;
-	}
-	public void setIdStudent(int idStudent) {
-		this.idStudent = idStudent;
 	}
 }

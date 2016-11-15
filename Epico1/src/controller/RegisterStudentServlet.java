@@ -46,7 +46,7 @@ public class RegisterStudentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String acao = request.getParameter("acao");
-		int id = 0;
+		
 		String name = request.getParameter("name_student");
 		System.out.println(name);
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
@@ -62,7 +62,7 @@ public class RegisterStudentServlet extends HttpServlet {
 		try {
 			switch (acao) {
 				case "Cadastrar":
-					Services.createStudent(id,name, dataOfBirth, letterClass, room, registration, turn,
+					Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn,
 							year, modalityCourse, scholarship);
 					showSucess(request, response);
 					break;
