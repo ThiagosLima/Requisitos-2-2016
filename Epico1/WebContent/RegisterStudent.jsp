@@ -97,22 +97,13 @@ body {<!--
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Cadastrar Aluno</h1>
-				<form action="RegisterServlet" method="POST">
+				<form action="RegisterStudentServlet?acao = Enviar" method="POST">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Nome:</label> <input type="text" name="name_student"
 									class="form-control" />
 							</div>
-							<%
-	String errorName = (String) request.getAttribute("errorName");
-
-	if (errorName != null) {
-		%>
-		<p style='color: red'> <%= errorName %></p>
-		<% 
-	}
-%>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
@@ -120,15 +111,6 @@ body {<!--
 									name="registration_student" class="form-control"
 									style="width: 100px" />
 							</div>
-													<%
-	String errorRegistration = (String) request.getAttribute("errorRegistration");
-
-	if (errorRegistration != null) {
-		%>
-		<p style='color: red'> <%= errorRegistration %></p>
-		<% 
-	}
-%>
 						</div>
 					</div>
 					<div class="row">
@@ -148,8 +130,8 @@ body {<!--
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bolsista:</label> <br> <input type="radio"
-									name="scholarship_student" value="true"> Sim <input
-									type="radio" name="scholarship_student" value="false"> Não
+									name="scholarship_student" value="yes"> Sim <input
+									type="radio" name="scholarship_student" value="no"> Não
 							</div>
 						</div>
 					</div>
@@ -187,9 +169,9 @@ body {<!--
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>Etapa/Modalidade do Curso:</label> <br> <input
-									type="radio" name="modalityCourse_student" value="Estudante EJA">
+									type="radio" name="modalityCourse_student" value="eja_student">
 								EJA - Educação de Jovens e Adultos <input type="radio"
-									name="modalityCourse_student" value="Estudante Normal">
+									name="modalityCourse_student" value="normal_student">
 								Normal
 							</div>
 						</div>

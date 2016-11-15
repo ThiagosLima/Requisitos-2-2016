@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Student;
 import services.Services;
 import validations.Validations;
 
@@ -17,13 +18,13 @@ import validations.Validations;
  * Servlet implementation class RegisterServlet
  */
 @WebServlet("/RegisterServlet")
-public class ValidateStudentServlet extends HttpServlet {
+public class RegisterStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ValidateStudentServlet() {
+    public RegisterStudentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,7 +44,9 @@ public class ValidateStudentServlet extends HttpServlet {
 	}
 
 	private void doService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String criou = null;
+		
+		String acao = request.getParameter("acao");
+		
 		String name = request.getParameter("name_student");
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
 		String letterClass = request.getParameter("letterClass_student");
@@ -54,19 +57,31 @@ public class ValidateStudentServlet extends HttpServlet {
 		String scholarship = request.getParameter("scholarship_student");
 		String modalityCourse = request.getParameter("modalityCourse_student");
 		
-		boolean validName = Validations.validateName(request, response, name);
-		boolean validRegistration = Validations.validateRegistration(request, response, registration);
-		
-		
-		if (validName && validRegistration){
-		
-			criou = "mensagem" ; 
-			request.setAttribute("criou", criou);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("MenuPrincipal.jsp");
-			dispatcher.forward(request, response);
+		try {
+			switch(acao) {
+				case "Enviar":
+					boolean validName = Validations.validateName(request, response, name);
+					boolean validRegistration = Validations.validateRegistration(request, response, registration);
+					boolean validLetterClass = Validations.validateLetterClass(request, response, letterClass);
+					boolean validTurn = Validations.validateTurn(request, response, turn);
+					boolean validScholarship = Validations.validateScholarship(request, response, scholarship);
+					boolean validModalityCourse = Validations.validateModalityCourse(request, response, modalityCourse);
+					
+					if (validName == true && validRegistration == true && validLetterClass == true && validTurn == true
+						&& validScholarship == true && validModalityCourse == true) {
+						
+						Character lettlerValid = letterClass.charAt(0);
+						Integer roomValid = Integer.parseInt(room);
+						Integer registrationValid = Integer.parseInt(registration);
+						Integer yearValid = Integer.parseInt(year);
+						
+						Services.createStudent(name, dataOfBirth, lettlerValid, roomValid, registrationValid, turn, 
+												yearValid,modalityCourse, scholarship);
+					}
+			}
+		} catch (ServletException erro) {
 			
 		}
 		
 	}
-	
 }

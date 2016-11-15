@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Student extends Person{
+public class Student extends Person {
 	
 	private Character letterClass;
 	private Integer room; // sala
@@ -10,19 +10,19 @@ public class Student extends Person{
 	private String turn;
 	private Integer year;
 	private String modalityCourse; //Modalidade de curso
-	private Boolean scholarship; //Bolsista
+	private String scholarship; //Bolsista
 	
 	
 	public Student(String name, String dataOfBirth,Character letterClass, Integer room, Integer registration, String turn, Integer year,
-			String modalityCourse ,Boolean scholarship) {
+			String modalityCourse ,String scholarship) {
 		super(name, dataOfBirth);
-		this.letterClass = letterClass;
-		this.room = room;
-		this.registration = registration;
-		this.turn = turn;
-		this.year = year;
-		this.modalityCourse = modalityCourse;
-		this.scholarship = scholarship;
+		setLetterClass(letterClass);
+		setRoom(room);
+		setRegistration(registration);
+		setTurn(turn);
+		setYear(year);
+		setModalityCourse(modalityCourse);
+		setScholarship(scholarship);
 	}
 
 	public Character getLetterClass() {
@@ -73,15 +73,11 @@ public class Student extends Person{
 		this.modalityCourse = modalityCourse;
 	}
 
-	public Boolean getScholarship() {
+	public String getScholarship() {
 		return scholarship;
 	}
 
-	public void setScholarship(Boolean scholarship) {
+	public void setScholarship(String scholarship) {
 		this.scholarship = scholarship;
 	}
-	
-	
-
-	
 }

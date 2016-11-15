@@ -96,10 +96,7 @@ if (criou != null && !criou.trim().isEmpty()) {
 					</div>
 				</nav>
 			</div>
-		</div>
-
-		
-		
+		</div>		
 	</div>
 </body>
 </html>

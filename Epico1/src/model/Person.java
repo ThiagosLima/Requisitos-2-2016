@@ -1,15 +1,14 @@
 package model;
 
 
-public class Person {
+public abstract class Person {
 	
-	protected String name;
-	private String dataOfBirth;
+	protected static String name;
+	protected static String dataOfBirth;
 
-	Person (String name,String dataOfBirth2 ) {
+	Person (String name,String dataOfBirth) {
 		setName(name);
-		setDataOfBirth(dataOfBirth2);
-		
+		setDataOfBirth(dataOfBirth);
 	}
 
 	public String getName() {
@@ -27,8 +26,4 @@ public class Person {
 	public void setDataOfBirth(String dataOfBirth) {
 		this.dataOfBirth = dataOfBirth;
 	}
-	
-
-	
-	
 }
