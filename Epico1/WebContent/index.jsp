@@ -30,7 +30,8 @@ body {
 <p> <input type="radio" name="user" value="D"/> Diretor </p> 
 <p> <input type="radio" name="user" value="F"/> Funcionário</p> 
 <p> <input type="radio" name="user" value="R"/> Responsável</p> 
-<%String erro = (String) request.getAttribute("erro");
+<%
+String erro = (String) request.getAttribute("erro");
 if(erro != null && erro.length() != 0 ){
 %>
 <p style='color: red'> <%= erro %></p>

@@ -44,7 +44,7 @@ body {<!--
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">CEF3</a>
+							<a class="navbar-brand" href="MenuPrincipal.jsp">CEF3</a>
 						</div>
 
 						<div class="collapse navbar-collapse"
@@ -57,9 +57,9 @@ body {<!--
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Responsavel <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="insertResponsible">Adicionar Responsável</a></li>
-										<li><a href="updateResponsible">Editar Responsável</a></li>
-										<li><a href="deleteResponsible">Excluir Responsável</a></li>
+										<li><a href="RegisterResponsible.jsp">Adicionar Responsável</a></li>
+										<li><a href="UpdateResponsible.jsp">Editar Responsável</a></li>
+										<li><a href="DeleteResponsible.jsp">Excluir Responsável</a></li>
 									</ul></li>
 
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -130,7 +130,6 @@ body {<!--
 							%>
 						</div>
 					</div>
-					<div class="row">
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Sala:</label> <input type="number" name="room_student"
@@ -163,7 +162,7 @@ body {<!--
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<label>Ano:</label> <input type="number" name="year_student"
+								<label>Ano a Cursar:</label> <input type="number" name="year_student"
 									class="form-control" style="width: 60px" />
 							</div>
 						</div>

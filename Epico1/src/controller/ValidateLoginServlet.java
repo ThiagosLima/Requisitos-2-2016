@@ -35,6 +35,14 @@ public class ValidateLoginServlet extends HttpServlet {
 		doService(request , response);
 	}
 
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
 	private void doService(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException  {
 		String login = request.getParameter("login");
 		String password  = request.getParameter("password");
@@ -54,14 +62,6 @@ public class ValidateLoginServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-	
 	
 
 }

@@ -54,9 +54,9 @@ body {<!--
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">Responsavel <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="insertResponsible">Adicionar Responsável</a></li>
-										<li><a href="updateResponsible">Editar Responsável</a></li>
-										<li><a href="deleteResponsible">Excluir Responsável</a></li>
+										<li><a href="RegisterResponsible.jsp">Adicionar Responsável</a></li>
+										<li><a href="UpdateResponsible.jsp">Editar Responsável</a></li>
+										<li><a href="DeleteResponsible.jsp">Excluir Responsável</a></li>
 									</ul></li>
 
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -175,7 +175,8 @@ body {<!--
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success"><li><a href="MenuPrincipal.jsp">Alterar Aluno</a></li></button>
+		
+							<button style="border-color: red" type="submit" class="btn btn-success" ><li> <a  href="MenuPrincipal.jsp">Excluir Aluno</a></li></button>
 						</div>
 					</div>
 				</form>

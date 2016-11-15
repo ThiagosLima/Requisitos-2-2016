@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<title>Menu Principal</title>
+<title>Alteração de Responsável</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -28,14 +28,7 @@ body {<!--
 </head>
 <body>
 
-<%
-String criou = (String) request.getAttribute("criou");
-if (criou != null && !criou.trim().isEmpty()) {
-%>
-	
-<%
-}
-%>
+
 
 	<div class="container">
 		<div class="row">
@@ -98,7 +91,58 @@ if (criou != null && !criou.trim().isEmpty()) {
 					</div>
 				</nav>
 			</div>
-		</div>		
+		</div>
+		<!-- A PARTE DE CIMA ACABA AQUI! -->
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Editar Responsável</h1>
+				<form action="RegisterServlet" method="POST">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Nome Completo do Responsável:</label> <input type="text" name="name_student"
+									class="form-control" />
+							</div>
+							
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>CPF:</label> <input type="text" name="name_student"
+									class="form-control" />
+							</div>
+							
+						</div>
+						
+					</div>
+					
+					<div class="row">
+					<div class="col-md-4">
+							<div class="form-group">
+								<label>Nome Completo do Aluno:</label> <input type="text"
+									name="registration_student" class="form-control" 
+									style="width: 360px"  />
+							</div>
+							
+						</div>	
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Data de Nascimento:</label> <input type="date"
+									name="dateOfBirth_student" class="form-control"
+									style="width: 160px" />
+							</div>
+						</div>
+						
+	
+					</div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<button  style="background-color: red"    type="submit" class="btn btn-success">Editar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
