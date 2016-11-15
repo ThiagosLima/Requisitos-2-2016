@@ -44,7 +44,7 @@ body {<!--
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">CEF3</a>
+							<a class="navbar-brand" href="MenuPrincipal.jsp">CEF3</a>
 						</div>
 
 						<div class="collapse navbar-collapse"
@@ -96,7 +96,7 @@ body {<!--
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Cadastrar Aluno</h1>
-				<form action="RegisterServlet" method="POST">
+				<form form action="RegisterServlet?acao=Enviar" method="POST">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">

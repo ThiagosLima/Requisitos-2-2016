@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sun.net.httpserver.spi.HttpServerProvider;
 
+import dao.StudentDao;
 import model.Person;
 import model.Student;
 
@@ -18,13 +19,14 @@ public class Services {
 
 	private static ArrayList<Person> newPerson = new ArrayList<Person>();
 
-	public static void createStudent(String name,String dataOfBirth,String letterClass,String room,
+	public static void createStudent(Integer id,String name,String dataOfBirth,String letterClass,String room,
 									 String registration,String turn,String year,String modalityCourse,
 									 String scholarship) {
 			
-		Student student = new Student(name,dataOfBirth,letterClass,room,registration,turn,year,modalityCourse,
+		Student student = new Student(id,name,dataOfBirth,letterClass,room,registration,turn,year,modalityCourse,
 									  scholarship);
 		newPerson.add(student);
+		StudentDao.insertStudent(student);
 	}
 
 	public static boolean isNumeric(String str) {
