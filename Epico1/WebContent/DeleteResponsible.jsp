@@ -118,7 +118,7 @@ body {<!--
 					<div class="row">
 					<div class="col-md-4">
 							<div class="form-group">
-								<label>Nome Completo do Aluno:</label> <input type="text"
+								<label>Matrícula do Aluno:</label> <input type="text"
 									name="registration_student" class="form-control" 
 									style="width: 360px"  />
 							</div>
