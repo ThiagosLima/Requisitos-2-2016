@@ -1,6 +1,5 @@
-/model/
-/validacoes/
-/servicoes/
-/services/
 /controller/
+/model/
+/services/
 /validations/
+/dao/

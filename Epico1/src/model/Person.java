@@ -1,25 +1,16 @@
 package model;
 
-import java.util.Date;
 
 public abstract class Person {
 	
-	private String name;
-	private String dataOfBirth;
-	private Character typeOfUser;
-	private String login;
-	private String password;
-	
-	public Person() {
-		
+	protected static String name;
+	protected static String dataOfBirth;
+
+	Person (String name,String dataOfBirth) {
+		setName(name);
+		setDataOfBirth(dataOfBirth);
 	}
 
-	Person (String name,String dateOfBirth , Character typeOfUser) {
-		setName(name);
-		setDataOfBirth(dateOfBirth);
-		setTypeOfUser(typeOfUser);
-	}
-	
 	public String getName() {
 		return name;
 	}
@@ -35,14 +26,4 @@ public abstract class Person {
 	public void setDataOfBirth(String dataOfBirth) {
 		this.dataOfBirth = dataOfBirth;
 	}
-
-	public Character getTypeOfUser() {
-		return typeOfUser;
-	}
-
-	public void setTypeOfUser(Character typeOfUser) {
-		this.typeOfUser = typeOfUser;
-	}
-	
-	
 }

@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@page import="java.awt.image.renderable.RenderContext"%>
 <%@page import="java.nio.file.Path"%>
@@ -37,8 +38,3 @@ if(erro != null && erro.length() != 0 ){
 }
 %>
 <p> <input type="submit" value="Login" name="LoginButton" />  </p>
-
-</form>
-
-</body>
-</html>

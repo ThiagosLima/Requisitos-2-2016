@@ -27,9 +27,6 @@ body {<!--
 </style>
 </head>
 <body>
-
-
-
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -44,7 +41,7 @@ body {<!--
 									class="icon-bar"></span> <span class="icon-bar"></span> <span
 									class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">CEF3</a>
+							<a class="navbar-brand" href="MenuPrincipal.jsp">CEF3</a>
 						</div>
 
 						<div class="collapse navbar-collapse"
@@ -92,47 +89,30 @@ body {<!--
 				</nav>
 			</div>
 		</div>
+
 		<!-- A PARTE DE CIMA ACABA AQUI! -->
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Cadastrar Aluno</h1>
-				<form action="RegisterServlet" method="POST">
+				<h1>Editar Aluno</h1>
+				<form action="UpdateStudentServlet?acao=Alterar" method="post">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Nome:</label> <input type="text" name="name_student"
 									class="form-control" />
 							</div>
-							<%
-								String errorName = (String) request.getAttribute("error");
-								if (errorName != null) {
-							%>
-							<p style='color: red'>
-								<%=errorName%></p>
-							<%
-								}
-							%>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-								<label>Matrícula:</label> <input type="number"
+								<label>Matrícula:</label> <input type="text"
 									name="registration_student" class="form-control"
 									style="width: 100px" />
 							</div>
-							<%
-								String errorRegistration = (String) request.getAttribute("errorRegistration");
-								if (errorRegistration != null) {
-							%>
-							<p style='color: red'>
-								<%=errorRegistration%></p>
-							<%
-								}
-							%>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-2">
-							<div class="form-group">
+							<div class="form-group" >
 								<label>Sala:</label> <input type="number" name="room_student"
 									class="form-control" style="width: 70px" />
 							</div>
@@ -147,9 +127,8 @@ body {<!--
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bolsista:</label> <br> <input type="radio"
-									name="scholarship_student" value="true"> Sim <input
-									type="radio" name="scholarship_student" value="false">
-								Não
+									name="scholarship_student" value="yes"> Sim <input
+									type="radio" name="scholarship_student" value="no"> Não
 							</div>
 						</div>
 					</div>
@@ -187,16 +166,16 @@ body {<!--
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>Etapa/Modalidade do Curso:</label> <br> <input
-									type="radio" name="modalityCourse_student"
-									value="Estudante EJA"> EJA - Educação de Jovens e
-								Adultos <input type="radio" name="modalityCourse_student"
-									value="Estudante Normal"> Normal
+									type="radio" name="modalityCourse_student" value="eja_student">
+								EJA - Educação de Jovens e Adultos <input type="radio"
+									name="modalityCourse_student" value="normal_student">
+								Normal
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success">Enviar</button>
+							<button type="submit" class="btn btn-success"><li><a href="MenuPrincipal.jsp">Alterar Aluno</a></li></button>
 						</div>
 					</div>
 				</form>
