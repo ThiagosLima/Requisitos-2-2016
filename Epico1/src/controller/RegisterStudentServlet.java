@@ -61,7 +61,7 @@ public class RegisterStudentServlet extends HttpServlet {
 		
 		try {
 			switch (acao) {
-				case "Enviar":
+				case "Cadastrar":
 					Services.createStudent(id,name, dataOfBirth, letterClass, room, registration, turn,
 							year, modalityCourse, scholarship);
 					showSucess(request, response);
