@@ -149,9 +149,8 @@ body {<!--
 						<div class="col-md-3">
 							<div class="form-group">
 								<label>Turno:</label> <br> <input type="radio"
-									name="turn_student" value="Matutino"> Matutino <input
-									type="radio" name="Vespertino" value="afternoon_student">
-								Vespertino
+									name="turn_student" value="Matutino"> Matutino <input type="radio"
+									name="turn_student" value="afternoon_student"> Vespertino
 							</div>
 						</div>
 						<div class="col-md-5">
