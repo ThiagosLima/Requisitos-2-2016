@@ -58,7 +58,6 @@ public class RegisterStudentServlet extends HttpServlet {
 		String modalityCourse = request.getParameter("modalityCourse_student");
 
 		try {
-
 			Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn, year, modalityCourse,
 					scholarship);
 			showSucess(request, response);
