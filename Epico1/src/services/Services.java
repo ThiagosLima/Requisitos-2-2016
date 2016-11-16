@@ -47,7 +47,7 @@ public class Services {
 			throws ServletException, IOException {
 		
 		request.setAttribute("sucess", message);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("RegisterStudent.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("MenuPrincipal.jsp");
 		dispatcher.forward(request, response);
 	}
 }

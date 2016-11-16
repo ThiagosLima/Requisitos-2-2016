@@ -28,7 +28,7 @@ public class StudentDao extends ConnectionFactory{
 
 
 
-	public static void insertStudent(Student student){
+	public static void insertStudent(Student student) {
 		
 		try {
 			String query = "INSERT INTO Student(registration,name,dateOfBirth,letterClass,room,turn,year,modalityCourse,scholarship) VALUES (?,?,?,?,?,?,?,?,?);";
@@ -54,5 +54,9 @@ public class StudentDao extends ConnectionFactory{
 			System.out.println("Erro ao adicionar aluno");
 			e.printStackTrace();
 		}
+	}
+	
+	public static void updateStudent(Student student) {
+		
 	}
 }

@@ -90,7 +90,6 @@ body {<!--
 			</div>
 		</div>
 
-		<!-- A PARTE DE CIMA ACABA AQUI! -->
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Cadastrar</h1>
@@ -150,7 +149,7 @@ body {<!--
 							<div class="form-group">
 								<label>Turno:</label> <br> <input type="radio"
 									name="turn_student" value="Matutino"> Matutino <input type="radio"
-									name="turn_student" value="afternoon_student"> Vespertino
+									name="turn_student" value="Vespertino"> Vespertino
 							</div>
 						</div>
 						<div class="col-md-5">

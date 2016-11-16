@@ -9,12 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.plaf.synth.SynthSeparatorUI;
-import javax.websocket.MessageHandler.Whole;
-
-import model.Student;
 import services.Services;
-import validations.Validations;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -48,11 +43,13 @@ public class RegisterStudentServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String name = request.getParameter("name_student");
+		System.out.println("Nome: "+name);
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
 		String letterClass = request.getParameter("letter_class_student");
 		String room = request.getParameter("room_student");
-		String registration = request.getParameter("registration_student");
+		String registration = request.getParameter("registration");
 		String turn = request.getParameter("turn_student");
+		System.out.println(turn);
 		String year = request.getParameter("year_student");
 		String scholarship = request.getParameter("scholarship_student");
 		String modalityCourse = request.getParameter("modalityCourse_student");

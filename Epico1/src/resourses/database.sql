@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS Responsible (
 	name VARCHAR(42),
 	dateOfBirth VARCHAR(10),
 	registration VARCHAR(10),
+	cpf VARCHAR(15),
 FOREIGN KEY (registration) REFERENCES Student(registration)
 )
 
