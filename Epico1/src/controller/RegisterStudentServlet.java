@@ -47,8 +47,6 @@ public class RegisterStudentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String acao = request.getParameter("acao");
-
 		String name = request.getParameter("name_student");
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
 		String letterClass = request.getParameter("letter_class_student");

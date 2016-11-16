@@ -1,24 +1,57 @@
 package dao;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.mysql.jdbc.DatabaseMetaData;
 
 public class ConnectionFactory {
 
 	static String status = "";
+	private static Connection connection;
+	
 	public static synchronized Connection getConexao() {
-		Connection connection = null;
-		String user = "root";
-		String password = "root";
+		
+		if (connection != null) 
+			return connection;
 		String nameDatabase = "cef";
-
+		
+		Properties properties = new Properties();
+		InputStream inStream = ConnectionFactory.class.getClassLoader().getResourceAsStream("/db.properties");
+		
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + nameDatabase, user, password);
+			
+			properties.load(inStream);
+			String driver = properties.getProperty("driver");;
+			String url = properties.getProperty("url");;
+			String user = properties.getProperty("user");
+			String password = properties.getProperty("password");
+			Class.forName(driver);
+			connection = DriverManager.getConnection(url,user, password);			
 			status = "Connection opened";
-		} catch (Exception error) {
+			System.out.println(status);
+		} catch (IOException error) {
 			status = "Connection not found";
+			System.out.println(status);
+		} catch (ClassNotFoundException error) {
+			error.printStackTrace();
+		} catch (SQLException error) {
+			error.printStackTrace();
 		}
 		return connection;
+	}
+	
+	public static void closeConnection (Connection toBeClosed) {
+		if (toBeClosed == null){
+			return;
+		} try {
+			toBeClosed.close();
+		} catch (SQLException error) {
+			error.printStackTrace();
+		}
 	}
 }

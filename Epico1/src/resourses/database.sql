@@ -14,11 +14,11 @@ CREATE TABLE  IF NOT EXISTS Student (
 );
 
 CREATE TABLE IF NOT EXISTS Responsible (
-	idResponsabile INT UNSIGNED PRIMARY KEY auto_increment,
+	idResponsible INT UNSIGNED PRIMARY KEY NOT NULL auto_increment,
 	passoword VARCHAR(10) ,
 	name VARCHAR(42),
 	dateOfBirth VARCHAR(10),
-	idStudent INT UNSIGNED,
+	registration VARCHAR(10),
 FOREIGN KEY (registration) REFERENCES Student(registration)
 )
 
