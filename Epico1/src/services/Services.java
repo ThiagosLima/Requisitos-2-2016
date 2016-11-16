@@ -23,6 +23,7 @@ public class Services {
 			
 		Student student = new Student(name,dataOfBirth,letterClass,room,registration,turn,year,modalityCourse,
 									  scholarship);
+	
 		StudentDao.insertStudent(student);
 	}
 

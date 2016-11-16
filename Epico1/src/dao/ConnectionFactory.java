@@ -26,22 +26,25 @@ public class ConnectionFactory {
 		try {
 			
 			properties.load(inStream);
-			String driver = properties.getProperty("driver");;
+			String driver = properties.getProperty("driver");
 			String url = properties.getProperty("url");;
 			String user = properties.getProperty("user");
 			String password = properties.getProperty("password");
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url,user, password);			
 			status = "Connection opened";
-			System.out.println(status);
+			
 		} catch (IOException error) {
 			status = "Connection not found";
 			System.out.println(status);
 		} catch (ClassNotFoundException error) {
+			status = "Connection not found";
 			error.printStackTrace();
 		} catch (SQLException error) {
+			status = "Connection not found";
 			error.printStackTrace();
 		}
+		System.out.println(status);
 		return connection;
 	}
 	

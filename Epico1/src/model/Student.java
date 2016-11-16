@@ -12,7 +12,7 @@ public class Student extends Person {
 	private String modalityCourse; //Modalidade de curso
 	private String scholarship; //Bolsista
 	
-	public Student(String nameStudent, String dataOfBirth,String letterClass,String room,String registration,
+	public Student(String name, String dataOfBirth,String letterClass,String room,String registration,
 			String turn, String year,String modalityCourse,String scholarShip) {
 		super(name, dataOfBirth);
 		setLetterClass(letterClass);

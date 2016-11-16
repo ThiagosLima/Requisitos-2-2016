@@ -14,14 +14,29 @@ public class StudentDao extends ConnectionFactory{
 		connection = ConnectionFactory.getConexao();
 	}
 	
+	
+	
+	public static Connection getConnection() {
+		return connection;
+	}
+
+
+
+	public static void setConnection(Connection connection) {
+		StudentDao.connection = connection;
+	}
+
+
+
 	public static void insertStudent(Student student){
 		
 		try {
-		
-			String query = "INSERT INTO Student(registration,name,dateOfBirth,letterClass,room,turn,year,modalityCourse,\n" + 
-					"			scholarship) VALUES ('?','?','?','?','?','?','?','?','?');";
+			String query = "INSERT INTO Student(registration,name,dateOfBirth,letterClass,room,turn,year,modalityCourse,scholarship) VALUES (?,?,?,?,?,?,?,?,?);";
+			if (connection == null){
+				StudentDao st = new StudentDao();
+				connection = st.getConexao();
+			}
 			PreparedStatement pstm = connection.prepareStatement(query);
-			System.out.println("QUARTA PARTE!");
 			pstm.setString(1, student.getRegistration());
 			pstm.setString(2, student.getName());
 			pstm.setString(3, student.getDataOfBirth());
@@ -31,9 +46,9 @@ public class StudentDao extends ConnectionFactory{
 			pstm.setString(7, student.getYear());
 			pstm.setString(8, student.getModalityCourse());
 			pstm.setString(9, student.getScholarship());
-			System.out.println("QUINTA PARTE");
 			pstm.executeUpdate();
-			pstm.close();			
+			pstm.close();	
+			System.out.println("Aluno Adicionado com sucesso");
 				
 		} catch (SQLException e) {
 			System.out.println("Erro ao adicionar aluno");
