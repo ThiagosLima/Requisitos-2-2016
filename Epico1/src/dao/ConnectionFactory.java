@@ -17,7 +17,7 @@ public class ConnectionFactory {
 			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/" + nameDatabase, user, password);
 			status = "Connection opened";
 		} catch (Exception error) {
-			status = error.getMessage();
+			status = "Connection not found";
 		}
 		return connection;
 	}

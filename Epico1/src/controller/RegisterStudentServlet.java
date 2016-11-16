@@ -46,31 +46,25 @@ public class RegisterStudentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String acao = request.getParameter("acao");
-		
+
 		String name = request.getParameter("name_student");
-		System.out.println("name" + name);
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
-		String letterClass = request.getParameter("letterClass_student");
+		String letterClass = request.getParameter("letter_class_student");
 		String room = request.getParameter("room_student");
 		String registration = request.getParameter("registration_student");
-		System.out.println(registration);
 		String turn = request.getParameter("turn_student");
 		String year = request.getParameter("year_student");
 		String scholarship = request.getParameter("scholarship_student");
 		String modalityCourse = request.getParameter("modalityCourse_student");
-		
+
 		try {
-			switch (acao) {
-				case "Cadastrar":
-					Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn,
-							year, modalityCourse, scholarship);
-					showSucess(request, response);
-					break;
-					
-				default:
-					break;
-			}
+
+			Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn, year, modalityCourse,
+					scholarship);
+			showSucess(request, response);
+
 		} catch (Exception error) {
 			showError(request, response, "Não foi possível cadastrar o aluno");
 		}

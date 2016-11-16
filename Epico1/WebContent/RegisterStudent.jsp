@@ -94,7 +94,7 @@ body {<!--
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Cadastrar</h1>
-				<form action="RegisterServlet?acao=Cadastrar" method="post">
+				<form action="RegisterServlet" method="post">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -127,8 +127,8 @@ body {<!--
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bolsista:</label> <br> <input type="radio"
-									name="scholarship_student" value="yes"> Sim <input
-									type="radio" name="scholarship_student" value="no"> Não
+									name="scholarship_student" value="Sim"> Sim <input
+									type="radio" name="scholarship_student" value="Não"> Não
 							</div>
 						</div>
 					</div>
@@ -149,8 +149,8 @@ body {<!--
 						<div class="col-md-3">
 							<div class="form-group">
 								<label>Turno:</label> <br> <input type="radio"
-									name="turn_student" value="morning_student"> Matutino <input
-									type="radio" name="turn_student" value="afternoon_student">
+									name="turn_student" value="Matutino"> Matutino <input
+									type="radio" name="Vespertino" value="afternoon_student">
 								Vespertino
 							</div>
 						</div>
@@ -166,16 +166,16 @@ body {<!--
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>Etapa/Modalidade do Curso:</label> <br> <input
-									type="radio" name="modalityCourse_student" value="eja_student">
+									type="radio" name="modalityCourse_student" value="Estudante EJA">
 								EJA - Educação de Jovens e Adultos <input type="radio"
-									name="modalityCourse_student" value="normal_student">
+									name="modalityCourse_student" value="Estudante Normal">
 								Normal
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success"><li><a href="MenuPrincipal.jsp">Cadastrar</a></li></button>
+							<button type="submit" class="btn btn-success"><li><a href="RegisterServlet">Cadastrar</a></li></button>
 						</div>
 					</div>
 				</form>

@@ -17,15 +17,12 @@ import model.Student;
 
 public class Services {
 
-	private static ArrayList<Person> newPerson = new ArrayList<Person>();
-
 	public static void createStudent(String name,String dataOfBirth,String letterClass,String room,
 									 String registration,String turn,String year,String modalityCourse,
 									 String scholarship) {
 			
 		Student student = new Student(name,dataOfBirth,letterClass,room,registration,turn,year,modalityCourse,
 									  scholarship);
-		newPerson.add(student);
 		StudentDao.insertStudent(student);
 	}
 
