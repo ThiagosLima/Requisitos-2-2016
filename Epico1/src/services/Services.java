@@ -17,24 +17,13 @@ import model.Student;
 
 public class Services {
 	
-	
+	private static ArrayList<Student> students = new ArrayList<Student>();
+
 	public static void createStudent(String name,String dataOfBirth,String letterClass,String room,
 									 String registration,String turn,String year,String modalityCourse,
-									 String scholarship) {		
-	}
-
-	public static void showErrorName(HttpServletRequest request, HttpServletResponse response, String message)
-			throws ServletException, IOException {
-		request.setAttribute("errorName", message);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("RegisterStudent.jsp");
-		dispatcher.forward(request, response);
-	}
-	
-	public static void showSucess(HttpServletRequest request, HttpServletResponse response, String message)
-			throws ServletException, IOException {
-		
-		request.setAttribute("sucess", message);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("MenuPrincipal.jsp");
-		dispatcher.forward(request, response);
+									 String scholarship) {
+		Student student = new Student(name, dataOfBirth, letterClass, room, registration, turn, 
+										year, modalityCourse, scholarship);
+		students.add(student);
 	}
 }
