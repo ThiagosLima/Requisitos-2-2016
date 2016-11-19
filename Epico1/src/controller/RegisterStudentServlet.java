@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import services.Services;
-import validations.Validations;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -61,18 +60,21 @@ public class RegisterStudentServlet extends HttpServlet {
 		System.out.println("Bolsista? "+scholarship);
 		String modalityCourse = request.getParameter("modalityCourse_student");
 		System.out.println("Modalidade: "+modalityCourse);
-	
-		boolean nameValid = Validations.validateName(request, response, name);
-		boolean registrationValid = Validations.validateRegistration(request, response, registration);
 		
-		if (nameValid == true && registrationValid == true) {
-			try {
-				Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn, year, modalityCourse,
-										scholarship);				
+		try {
+			Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn, year, modalityCourse,
+									scholarship);			
 
-			} catch (Exception error) {
-				Validations.showError(request, response, "Não foi possível cadastrar o aluno");
-			}
+		} catch (Exception error) {
+			showError(request, response, "Não foi possível cadastrar o aluno");
 		}
+	}
+
+	private void showError(HttpServletRequest request, HttpServletResponse response, String message)
+			throws ServletException, IOException {
+
+		request.setAttribute("error", message);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("RegisterStudent.jsp");
+		dispatcher.forward(request, response);
 	}
 }
