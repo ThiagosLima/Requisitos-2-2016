@@ -41,51 +41,27 @@ public class RegisterStudentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String name = request.getParameter("name_student");
 		System.out.println("Nome: "+name);
 		String dataOfBirth = request.getParameter("dateOfBirth_student");
+		System.out.println("Data de Nascimento: "+dataOfBirth);
 		String letterClass = request.getParameter("letter_class_student");
+		System.out.println("Letra da Sala: "+letterClass);
 		String room = request.getParameter("room_student");
+		System.out.println("Sala: "+room);
 		String registration = request.getParameter("registration");
+		System.out.println("Matricula: "+registration);
 		String turn = request.getParameter("turn_student");
-		System.out.println(turn);
+		System.out.println("Turno: "+turn);
 		String year = request.getParameter("year_student");
+		System.out.println("Ano: "+year);
 		String scholarship = request.getParameter("scholarship_student");
+		System.out.println("Bolsista? "+scholarship);
 		String modalityCourse = request.getParameter("modalityCourse_student");
-
-		try {
-			Services.createStudent(name, dataOfBirth, letterClass, room, registration, turn, year, modalityCourse,
-					scholarship);
-			showSucess(request, response);
-
-		} catch (Exception error) {
-			showError(request, response, "Não foi possível cadastrar o aluno");
-		}
+		System.out.println("Modalidade: "+modalityCourse);
+		
 	}
-
-	private String validateName(HttpServletRequest request, HttpServletResponse response, String name,
-			String registration) throws ServletException, IOException {
-
-		if (name == null || name.isEmpty()) {
-			showError(request, response, "Nome Vazio! Por favor preencha o campo do nome.");
-		} else if (name.length() < 3) {
-			showError(request, response, "Insira um nome com no minimo 3 letras.");
-		}
-		return name;
-	}
-
-	/*
-	 * private Integer validateRegistration (HttpServletRequest request,
-	 * HttpServletResponse response, String registration) throws
-	 * ServletException, IOException {
-	 * 
-	 * int numberValid = 0; if (registration == null || registration.isEmpty())
-	 * { showErrorRegistration(request, response, "Insira a matrícula"); }
-	 * 
-	 * try { numberValid = Integer.parseInt(registration); } catch (Exception
-	 * exception) { throw new ServletException(); } return numberValid; }
-	 */
 
 	private void showError(HttpServletRequest request, HttpServletResponse response, String message)
 			throws ServletException, IOException {
@@ -93,11 +69,5 @@ public class RegisterStudentServlet extends HttpServlet {
 		request.setAttribute("error", message);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("RegisterStudent.jsp");
 		dispatcher.forward(request, response);
-	}
-
-	private void showSucess(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		Services.showSucess(request, response, "Aluno Cadastrado Com Sucesso");
 	}
 }

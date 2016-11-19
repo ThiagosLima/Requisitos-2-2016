@@ -93,7 +93,7 @@ body {<!--
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Cadastrar</h1>
-				<form action="RegisterServlet" method="post">
+				<form action="RegisterServlet" method="post"  >
 					<div class="row">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -104,7 +104,7 @@ body {<!--
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Matrícula:</label> <input type="text"
-									name="registration_student" class="form-control"
+									name="registration" class="form-control"
 									style="width: 100px" />
 							</div>
 						</div>
@@ -126,7 +126,7 @@ body {<!--
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bolsista:</label> <br> <input type="radio"
-									name="scholarship_student" value="Sim"> Sim <input
+									 value="Sim"> Sim <input
 									type="radio" name="scholarship_student" value="Não"> Não
 							</div>
 						</div>
@@ -173,7 +173,7 @@ body {<!--
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-success"><li><a href="RegisterServlet">Cadastrar</a></li></button>
+							<button type="submit" class="btn btn-success"><li><a href="MenuPrincipal.jsp">Cadastrar</a></li></button>
 						</div>
 					</div>
 				</form>

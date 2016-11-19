@@ -17,23 +17,10 @@ import model.Student;
 
 public class Services {
 	
+	
 	public static void createStudent(String name,String dataOfBirth,String letterClass,String room,
 									 String registration,String turn,String year,String modalityCourse,
-									 String scholarship) {
-			
-		Student student = new Student(name,dataOfBirth,letterClass,room,registration,turn,year,modalityCourse,
-									  scholarship);
-	
-		StudentDao.insertStudent(student);
-	}
-
-	public static boolean isNumeric(String str) {
-		try {
-			double d = Double.parseDouble(str);
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-		return true;
+									 String scholarship) {		
 	}
 
 	public static void showErrorName(HttpServletRequest request, HttpServletResponse response, String message)
