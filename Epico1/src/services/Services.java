@@ -26,4 +26,12 @@ public class Services {
 										year, modalityCourse, scholarship);
 		students.add(student);
 	}
+	
+	public static ArrayList<Student> getStudents() {
+		return students;
+	}
+
+	public static void setStudents(ArrayList<Student> students) {
+		Services.students = students;
+	}
 }
